@@ -1,0 +1,11 @@
+[package]
+name = "v_display"
+version = "0.1.0"
+authors = ["marin postma <postma.marin@protonmail.com>"]
+edition = "2018"
+
+[dependencies]
+sdl2 = "0.32.2"
+
+[dev-dependencies]
+rand = "0.7.0"
