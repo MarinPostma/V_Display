@@ -1,8 +1,10 @@
 use crate::pixel::Pixel;
 use sdl2::render::WindowCanvas;
 use sdl2::EventPump;
+use sdl2::Sdl;
 
 pub struct Display {
+    pub context: Sdl,
     canvas: WindowCanvas,
     event_pump: EventPump,
     pixels: Vec<Pixel>,
@@ -82,6 +84,7 @@ impl DisplayBuilder {
         let event_pump = sdl_context.event_pump()?;
         canvas.clear();
         Ok(Display {
+            context: sdl_context,
             canvas: canvas,
             event_pump: event_pump,
             pixels: self.make_pixel_grid(),
